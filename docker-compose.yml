@@ -9,11 +9,11 @@ services:
     container_name: container_postgres
     image: postgres
     environment:
-      POSTGRES_USER: 'admin'
-      POSTGRES_PASSWORD: 'admin'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
       PGDATA: /data/postgres
-    volumes:
-      - ~/postgres:/data/postgres
+    # volumes:
+    #   - ~/postgres:/data/postgres
     ports:
       - 5432:5432
     networks:
@@ -26,8 +26,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
       PGADMIN_DEFAULT_PASSWORD: 'admin'
-    volumes:
-      - ~/pgadmin:/var/lib/pgadmin
+    # volumes:
+    #   - ~/pgadmin:/var/lib/pgadmin
     ports:
       - 16543:80
     networks:
