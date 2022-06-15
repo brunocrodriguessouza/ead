@@ -36,7 +36,7 @@ services:
       - POSTGRES
     restart: unless-stopped
 
-    # Manually
+    # TODO - configure the volumes
 
     # docker network create --driver bridge postgres-network
     # docker run --name container_postgres --network=postgres-network -p 5432:5432 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -d postgres
