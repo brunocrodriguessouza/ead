@@ -4,44 +4,44 @@ networks:
   postgres-network:
     driver: bridge
 
-services:
-  POSTGRES:
-    container_name: container_postgres
-    image: postgres
-    environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-      PGDATA: /data/postgres
-    # volumes:
-    #   - ~/postgres:/data/postgres
-    ports:
-      - 5432:5432
-    networks:
-      - postgres-network
-    restart: unless-stopped
+  services:
+    POSTGRES:
+      container_name: container_postgres
+      image: postgres
+      environment:
+        POSTGRES_USER: 'postgres'
+        POSTGRES_PASSWORD: 'postgres'
+        PGDATA: /data/postgres
+      # volumes:
+      #   - ~/postgres:/data/postgres
+      ports:
+        - 5432:5432
+      networks:
+        - postgres-network
+      restart: unless-stopped
 
-  PGADMIN:
-    container_name: container_pgadmin
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
-      PGADMIN_DEFAULT_PASSWORD: 'admin'
-    # volumes:
-    #   - ~/pgadmin:/var/lib/pgadmin
-    ports:
-      - 16543:80
-    networks:
-      - postgres-network
-    depends_on:
-      - POSTGRES
-    restart: unless-stopped
+    PGADMIN:
+      container_name: container_pgadmin
+      image: dpage/pgadmin4
+      environment:
+        PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
+        PGADMIN_DEFAULT_PASSWORD: 'admin'
+      # volumes:
+      #   - ~/pgadmin:/var/lib/pgadmin
+      ports:
+        - 16543:80
+      networks:
+        - postgres-network
+      depends_on:
+        - POSTGRES
+      restart: unless-stopped
 
-    # TODO - configure the volumes
+      # TODO - configure the volumes
 
-    # docker network create --driver bridge postgres-network
-    # docker run --name container_postgres --network=postgres-network -p 5432:5432 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -d postgres
-    # docker run --name container_pgadmin --network=postgres-network -p 16543:80 -e "PGADMIN_DEFAULT_EMAIL=admin@admin.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" -d dpage/pgadmin4
-    
+      # docker network create --driver bridge postgres-network
+      # docker run --name container_postgres --network=postgres-network -p 5432:5432 -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -d postgres
+      # docker run --name container_pgadmin --network=postgres-network -p 16543:80 -e "PGADMIN_DEFAULT_EMAIL=admin@admin.com" -e "PGADMIN_DEFAULT_PASSWORD=admin" -d dpage/pgadmin4
+      
 
 
 

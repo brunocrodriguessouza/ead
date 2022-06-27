@@ -83,6 +83,95 @@
 					"response": []
 				},
 				{
+					"name": "UPDATE USER",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Bruno Souza\",\n    \"phoneNumber\": \"19999999999\",\n    \"cpf\": \"12345678900\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/users/9dfdc34f-5d13-401a-8462-b60a2ccd6f5c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"users",
+								"9dfdc34f-5d13-401a-8462-b60a2ccd6f5c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PASSWORD",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\":\"123456789\",\n    \"oldPassword\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/users/9dfdc34f-5d13-401a-8462-b60a2ccd6f5c/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"users",
+								"9dfdc34f-5d13-401a-8462-b60a2ccd6f5c",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT IMAGE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imageUrl\":\"teste-unico\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8087/users/9dfdc34f-5d13-401a-8462-b60a2ccd6f5c/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"users",
+								"9dfdc34f-5d13-401a-8462-b60a2ccd6f5c",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DELETE USER",
 					"request": {
 						"method": "DELETE",
